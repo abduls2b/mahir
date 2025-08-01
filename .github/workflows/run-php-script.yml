@@ -23,7 +23,7 @@ jobs:
       # Step 3: Run the PHP script and save the output
       - name: Run PHP script
         run: |
-          php live.php?id=154&token=JITENDRA_KUMAR&e=.m3u8p > result.txt
+          php playlist.php > result.txt
 
       # Step 4: Commit and push the changes
       - name: Commit and push changes
