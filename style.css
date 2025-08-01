@@ -1,0 +1,148 @@
+
+/* ===== Advanced Modern UI CSS for SonyLiv Web by @RioUniverse ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:root {
+  --primary: #00ffe0;
+  --secondary: #6c63ff;
+  --accent: #ff4ecb;
+  --bg-dark: #0f0f0f;
+  --bg-gradient: linear-gradient(to right, #6c63ff, #00ffe0);
+  --text-light: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --glass-effect: blur(12px);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --hover-glow: 0 0 15px rgba(0, 255, 224, 0.8);
+  --radius: 16px;
+  --transition: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+/* ===== Header Branding ===== */
+#jtvh1 {
+  text-align: center;
+  padding: 20px;
+}
+#jtvh1 h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px var(--primary); }
+  to { text-shadow: 0 0 20px var(--secondary); }
+}
+
+/* ===== Container Layout ===== */
+.container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+[class*="col-"] {
+  flex: 0 0 calc(100% / 2 - 20px);
+  max-width: calc(100% / 2 - 20px);
+}
+@media (min-width: 768px) {
+  .col-md-3 { flex: 0 0 22%; max-width: 22%; }
+}
+@media (min-width: 992px) {
+  .col-lg-2 { flex: 0 0 14%; max-width: 14%; }
+}
+
+/* ===== Card Design ===== */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--glass-effect);
+  transition: var(--transition);
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: var(--hover-glow);
+}
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card-body {
+  padding: 10px;
+}
+.card-body span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary);
+  text-shadow: 0 0 5px var(--primary);
+}
+
+/* ===== Buttons & Links ===== */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--accent);
+}
+
+/* ===== Telegram Button ===== */
+center a img {
+  border-radius: var(--radius);
+  border: 2px solid var(--primary);
+  transition: var(--transition);
+}
+center a:hover img {
+  transform: scale(1.05);
+  box-shadow: var(--hover-glow);
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+/* ===== Footer Gap Fix ===== */
+body > br:last-of-type {
+  display: none;
+    }
